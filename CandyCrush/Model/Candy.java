@@ -25,7 +25,7 @@ class CircleCandy extends Candy {
 class RectangleCandy extends Candy {
 
     public RectangleCandy() {
-        super(Color.GREEN); // Set color to green
+        super(Color.GREEN);
     }
 
     public void draw(Graphics2D g, int x, int y, int size) {
@@ -36,7 +36,7 @@ class RectangleCandy extends Candy {
 
 class TriangleCandy extends Candy {
     public TriangleCandy() {
-        super(Color.RED); // Set color to red
+        super(Color.RED);
     }
 
     public void draw(Graphics2D g, int x, int y, int size) {
