@@ -64,7 +64,27 @@ public class GameManager {
     }
 
     private void generateNewCandies(){
+        Random random = new Random();
 
+        for (int i =0; i < ROWS; i++){
+            for ( int j = 0; j < COLUMNS; j++){
+                if (board[i][j] == null) {
+                    int candyType = random.nextInt(3);
+
+                    switch (candyType){
+                        case 0:
+                            board[i][j] = new CircleCandy();
+                            break;
+                        case 1:
+                            board[i][j] = new RectangleCandy();
+                            break;
+                        case 2:
+                            board[i][j] = new TriangleCandy();
+                            break;
+                    }
+                }
+            }
+        }
     }
 
     private void updateScore(){
