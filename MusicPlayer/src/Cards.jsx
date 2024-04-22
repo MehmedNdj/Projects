@@ -1,22 +1,22 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 function MusicCard() {
-  const theme = useTheme();
-
   return (
-    <Card sx={{ width: '350px', height:'200px'}}>
-      <Box>
-        <CardContent >
+    <Card sx={{ display: 'flex', width: '600px', height: '300px' }}>
+      {/* Left section */}
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1 }}>
+        <CardContent>
           <Typography component="div" variant="h5">
             Live From Space
           </Typography>
@@ -24,25 +24,28 @@ function MusicCard() {
             Mac Miller
           </Typography>
         </CardContent>
-        <Box >
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          {/* Middle section */}
+          <IconButton aria-label="previous" size="large">
+            <SkipPreviousIcon fontSize="large" />
           </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon />
+          <IconButton aria-label="play/pause" size="large">
+            <PlayArrowIcon fontSize="large" />
           </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+          <IconButton aria-label="next" size="large">
+            <SkipNextIcon fontSize="large" />
           </IconButton>
         </Box>
-        </Box>
-        {/* <CardMedia
+      </Box>
+      {/* Right section */}
+      <CardMedia
         component="img"
-        sx={{ width: 150,  }}
+        sx={{ width: 250, height: '100%', objectFit: 'cover'}}
         image="/src/assets/live-from-space.jpg"
         alt="Live from space album cover"
-      /> */}
+      />
     </Card>
   );
 }
+
 export default MusicCard;

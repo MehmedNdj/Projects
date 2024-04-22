@@ -8,7 +8,7 @@ function App() {
   return (
   <div>
       <div>
-          <NavBar />
+          <NavBar/>
           <h1 className='title'>Music Player</h1>
      </div>
      <div className='converter'>
