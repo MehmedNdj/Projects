@@ -3,7 +3,6 @@ function Playlist(){
     return(
         <div className="playlistcard">
             <div>
-            <intup type="text" placeholder="Playlist name"/>
                 <ul>
                     <li>Music 1</li>
                     <li>Music 2</li>
