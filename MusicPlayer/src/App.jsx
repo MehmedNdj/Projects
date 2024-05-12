@@ -3,7 +3,8 @@ import NavBar from './Nav'
 import MusicCard from './Cards'
 import Converter from './Converter'
 import Displayer from './Displayer'
-import PlayList from './Plalists'
+import Playlist from './Playlist'
+import Creator from './CreatePlaylist'
 
 function App() {
   return (
@@ -24,12 +25,11 @@ function App() {
                <Displayer />
          </div>
       </div>
-      <div className='playlist'>
-            <h3></h3>
-            <PlayList />
+      <div className='playlist-view'>
+            <Playlist />
+            <Creator/>
       </div>
    </div>
-   //Comittment issues
   )
 }
 

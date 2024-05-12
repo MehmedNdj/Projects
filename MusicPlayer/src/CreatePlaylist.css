@@ -1,0 +1,12 @@
+.creator {
+    width: 200px;
+    height: 300px;
+    background-color: #0288d1;
+    border-radius: 10px;
+}
+
+.creator .buttonA{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}

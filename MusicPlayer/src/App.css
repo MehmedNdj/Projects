@@ -42,3 +42,22 @@ body {
   height: 600px;
   margin-top: 40px;
 }
+
+.playlistcard {
+  width: 200px;
+  height: 300px;
+  background-color: #0288d1;
+  margin-top: 30px;
+  border-radius: 10px;
+
+}
+
+.playlist-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  margin-top: 40px;
+}
