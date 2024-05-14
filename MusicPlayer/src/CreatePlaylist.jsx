@@ -3,7 +3,7 @@ import './CreatePlaylist.css'
 import Creatordiv from './Creatordiv';
 import add from './assets/add.png'
 
-function Creator() {
+function Creator2() {
 
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef(null);
@@ -41,4 +41,4 @@ function Creator() {
     )
 }
 
-export default Creator;
+export default Creator2;

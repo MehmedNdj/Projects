@@ -1,42 +1,55 @@
-import './App.css'
-import NavBar from './Nav'
-import MusicCard from './Cards'
-import Converter from './Converter'
-import Displayer from './Displayer'
-import Playlist from './Playlist'
-import Creator from './CreatePlaylist'
+import React, { useState } from 'react';
+import './App.css';
+import NavBar from './Nav';
+import MusicCard from './Cards';
+import Converter from './Converter';
+import Displayer from './Displayer';
+import Playlist from './Playlist';
+import Creator2 from './CreatePlaylist';
 
 function App() {
+  const [playlist, setPlaylist] = useState([]);
 
-
+  const handleSavePlaylist = (newFiles) => {
+    // Convert FileList to an array of File objects
+    const filesArray = Array.from(newFiles);
+    // Extract only the name property from each File object
+    const fileNamesArray = filesArray.map(file => ({ name: file.name }));
+    // Update the playlist state with the array of file objects
+    console.log("Playlist files:", fileNamesArray); // Add this line
+    setPlaylist(fileNamesArray);
+      }
+    
+    
   return (
-  <div>
+    <div>
       <div>
-          <NavBar/>
-          <h1 className='title'>Converter</h1>
-     </div>
-     <div className='converter'>
-          <h2>Your favorite music and converter , <br></br> all in one place</h2> 
-          <Converter /> 
-     </div>
-     <div className='musicwrapper'>
-            <h1 className='title'>Music Player</h1>
-         <div className='cardwrapper'>
-            <MusicCard /> 
-         </div>
-         <div className='displayer'>
-               <Displayer />
-         </div>
+        <NavBar />
+        <h1 className='title'>Converter</h1>
       </div>
-      <div> 
-            <h1 className='title'>Playlists</h1>
-      <div className='playlist-view'>
-            <div className='playlist-view'>
-                  <Playlist/>
-                  <Creator />
-            </div>
+      <div className='converter'>
+        <h2>Your favorite music and converter , <br></br> all in one place</h2>
+        <Converter />
       </div>
-   </div>
+      <div className='musicwrapper'>
+        <h1 className='title'>Music Player</h1>
+        <div className='cardwrapper'>
+          <MusicCard />
+        </div>
+        <div className='displayer'>
+          <Displayer />
+        </div>
+      </div>
+      <div>
+        <h1 className='title'>Playlists</h1>
+        <div className='playlist-view'>
+          {/* Pass onSavePlaylist function as a prop to Creator */}
+          <Creator2 onSavePlaylist={handleSavePlaylist} />
+          <Playlist playlist={playlist} />
+        </div>
+      </div>
     </div>
-  )}
+  );
+}
+
 export default App;
