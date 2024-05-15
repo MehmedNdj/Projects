@@ -2,13 +2,14 @@ import './Playlist.css';
 
 
 function Playlist({ playlist }) {
-    console.log("Playlist prop:", playlist); // Add this line
-    return (
+  const firstFive = playlist.slice(0, 5);
+
+  return (
       <div className="playlistcard">
         <div>
           <h2>Playlist</h2>
           <ul>
-            {playlist.map((file, index) => (
+            {firstFive.map((file, index) => (
               <li key={index}>{file.name}</li>
             ))}
           </ul>
@@ -19,3 +20,4 @@ function Playlist({ playlist }) {
   
 
 export default Playlist;
+

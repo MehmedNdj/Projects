@@ -9,16 +9,17 @@ import Creator2 from './CreatePlaylist';
 
 function App() {
   const [playlist, setPlaylist] = useState([]);
-
+  
   const handleSavePlaylist = (newFiles) => {
-    // Convert FileList to an array of File objects
-    const filesArray = Array.from(newFiles);
-    // Extract only the name property from each File object
-    const fileNamesArray = filesArray.map(file => ({ name: file.name }));
-    // Update the playlist state with the array of file objects
-    console.log("Playlist files:", fileNamesArray); // Add this line
-    setPlaylist(fileNamesArray);
-      }
+      // Convert FileList to an array of File objects
+      const filesArray = Array.from(newFiles);
+      // Extract only the name property from each File object
+      const fileNamesArray = filesArray.map(file => ({ name: file.name }));
+      // Create a new playlist with the array of file objects
+      console.log("New playlist files:", fileNamesArray); // Add this line
+      setPlaylist(prevPlaylist => [...prevPlaylist, fileNamesArray]);
+    }
+      
     
     
   return (
@@ -45,7 +46,9 @@ function App() {
         <div className='playlist-view'>
           {/* Pass onSavePlaylist function as a prop to Creator */}
           <Creator2 onSavePlaylist={handleSavePlaylist} />
-          <Playlist playlist={playlist} />
+          {playlist.map((playlist, index) => (
+          <Playlist key={index} playlist={playlist} />
+          ))}
         </div>
       </div>
     </div>

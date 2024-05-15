@@ -1,10 +1,13 @@
 // CreatePlaylist.js
-import React from 'react';
+import React, { useRef } from 'react';
 import './Creatordiv.css';
 
 function Create({ onSavePlaylist }) {
+  const fileInput = useRef();
+
   const handleSave = (event) => {
-    const files = event.target.files;
+    event.preventDefault();
+    const files = fileInput.current.files;
     // Ensure onSavePlaylist is a function before calling it
     if (typeof onSavePlaylist === 'function') {
       // Call onSavePlaylist function with uploaded files
@@ -15,9 +18,10 @@ function Create({ onSavePlaylist }) {
   return (
     <div className='crdiv'>
       <h2>Create your playlist</h2>
-      {/* Attach onChange event to input */}
-      <input type="file" multiple onChange={handleSave} />
-      <button>Save</button>
+      <form onSubmit={handleSave}>
+        <input type="file" multiple ref={fileInput} />
+        <button type="submit">Save</button>
+      </form>
     </div>
   );
 }

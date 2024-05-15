@@ -3,7 +3,7 @@ import './CreatePlaylist.css'
 import Creatordiv from './Creatordiv';
 import add from './assets/add.png'
 
-function Creator2() {
+function Creator2({ onSavePlaylist }) { // Add onSavePlaylist prop here
 
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef(null);
@@ -34,7 +34,7 @@ function Creator2() {
             </div>
             {isVisible && (
             <div ref={ref}>
-                <Creatordiv />
+                <Creatordiv onSavePlaylist={onSavePlaylist} /> {/* Pass onSavePlaylist prop here */}
             </div>
             )}
         </div>
