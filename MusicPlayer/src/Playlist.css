@@ -5,3 +5,8 @@
     border-radius: 10px;
     color: white;
   }
+
+  .playlistcard .h2 {
+    margin-top: 10px;
+    background-color: black;
+  }

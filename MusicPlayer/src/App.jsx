@@ -20,8 +20,6 @@ function App() {
       setPlaylist(prevPlaylist => [...prevPlaylist, fileNamesArray]);
     }
       
-    
-    
   return (
     <div>
       <div>
@@ -44,7 +42,6 @@ function App() {
       <div>
         <h1 className='title'>Playlists</h1>
         <div className='playlist-view'>
-          {/* Pass onSavePlaylist function as a prop to Creator */}
           <Creator2 onSavePlaylist={handleSavePlaylist} />
           {playlist.map((playlist, index) => (
           <Playlist key={index} playlist={playlist} />
