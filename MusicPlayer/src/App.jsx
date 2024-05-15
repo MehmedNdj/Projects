@@ -27,7 +27,7 @@ function App() {
         <h1 className='title'>Converter</h1>
       </div>
       <div className='converter'>
-        <h2>Your favorite music and converter , <br></br> all in one place</h2>
+        <h2>Your favorite music and converter , <br></br> all in one place</h2><br></br>
         <Converter />
       </div>
       <div className='musicwrapper'>

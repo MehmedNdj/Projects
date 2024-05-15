@@ -47,8 +47,8 @@ body {
 
 .playlist-view {
   display: grid;
-  grid-template-columns: 0fr 0fr 0fr 1fr;
-  gap: 20px;
+  grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
   text-align: center;
   align-items: center;
   justify-content: center;

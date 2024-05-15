@@ -1,4 +1,4 @@
-.mp3 , .down{
+.down , .mp3{
     height: 30px;
     width: 30px;
 }
@@ -6,4 +6,8 @@
 .b1 , .b2 {
     border: 0;
     background-color: white;
+}
+
+.b1:hover , .b2:hover{
+    background-color: #f1f1f1;
 }
