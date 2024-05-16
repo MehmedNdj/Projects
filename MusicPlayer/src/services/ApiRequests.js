@@ -6,7 +6,7 @@ const requestOptions = {
     params: { },
     headers: {
       'X-RapidAPI-Key': '9f14a9a917msh3e9bf721b7b0bd7p1db6c9jsnd9b69af1c910',
-      'X-RapidAPI-Host': 'coolguruji-youtube-to-mp3-download-v1.p.rapidapi.com'
+      'X-RapidAPI-Host': 'youtube-mp3-downloader2.p.rapidapi.com'
     }
   };
 
