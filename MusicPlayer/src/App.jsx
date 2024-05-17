@@ -30,8 +30,8 @@ function App() {
         <h2>Your favorite music and converter , <br></br> all in one place</h2><br></br>
         <Converter />
       </div>
-      <div className='musicwrapper'>
         <h1 className='title'>Music Player</h1>
+      <div className='musicwrapper'>
         <div className='cardwrapper'>
           <MusicCard />
         </div>

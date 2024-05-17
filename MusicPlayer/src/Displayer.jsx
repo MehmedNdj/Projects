@@ -24,7 +24,7 @@ function Displayer() {
         height={400}
         width={750}
         itemSize={46}
-        itemCount={20}
+        itemCount={10}
         overscanCount={5}
         marginTop={10}
       >

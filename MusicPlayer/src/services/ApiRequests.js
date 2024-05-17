@@ -5,7 +5,7 @@ const requestOption = {
   method: 'GET',
   url: 'https://youtube-mp3-downloader2.p.rapidapi.com/ytmp3/ytmp3/',
   headers: {
-    'X-RapidAPI-Key': '9f14a9a917msh3e9bf721b7b0bd7p1db6c9jsnd9b69af1c910',
+    'X-RapidAPI-Key': 'ca7e128ec1msh532359641fbc843p12c3b9jsn4d386e964bc4',
     'X-RapidAPI-Host': 'youtube-mp3-downloader2.p.rapidapi.com'
   }
 };

@@ -28,11 +28,11 @@ body {
   border-radius: 20px;
 }
 
-/* .musicwrapper {
+.musicwrapper {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 20px; 
-} */
+}
 
 
 .playlist {

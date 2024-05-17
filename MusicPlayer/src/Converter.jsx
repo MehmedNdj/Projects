@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
@@ -11,20 +11,17 @@ function Converter() {
   const [link, setLink] = useState('');
   const [response, setResponse] = useState(null);
 
-  const handleFetch = async () => {
+  const handleFetchAndDownload = async () => {
     if (link) {
       try {
         const res = await fetch(link);
         setResponse(res.data);
+        if (res.data && res.data.dlink) {
+          window.location.href = res.data.dlink;
+        }
       } catch (error) {
         console.error('Fetch error:', error);
       }
-    }
-  };
-
-  const handleDownload = () => {
-    if (response && response.dlink) {
-      window.location.href = response.dlink;
     }
   };
 
@@ -45,14 +42,9 @@ function Converter() {
           setLink(e.target.value);
         }}
       />
-      <IconButton onClick={handleFetch}>
+      <IconButton onClick={handleFetchAndDownload} className='down-icon'>
         <img src={down} alt="down-icon" className='down' />
       </IconButton>
-      {response && response.dlink && (
-        <IconButton onClick={handleDownload}>
-          <img src={down} alt="down-icon" className='down' />
-        </IconButton>
-      )}
     </Paper>
   );
 }
