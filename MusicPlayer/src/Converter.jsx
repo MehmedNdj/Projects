@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
@@ -11,31 +11,20 @@ function Converter() {
   const [link, setLink] = useState('');
   const [response, setResponse] = useState(null);
 
-  useEffect(() => {
+  const handleFetch = async () => {
     if (link) {
-      const fetchData = async () => {
-        try {
-          const res = await fetch(link);
-          setResponse(res.data);
-        } catch (error) {
-          console.error('Fetch error:', error);
-        }
-      };
-
-      fetchData();
+      try {
+        const res = await fetch(link);
+        setResponse(res.data);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
     }
-  }, [link]);
+  };
 
-  useEffect(() => {
+  const handleDownload = () => {
     if (response && response.dlink) {
-      // Trigger download process
       window.location.href = response.dlink;
-    }
-  }, [response]);
-
-  const handleClick = () => {
-    if (link) {
-      setLink(link);
     }
   };
 
@@ -56,9 +45,14 @@ function Converter() {
           setLink(e.target.value);
         }}
       />
-      <IconButton onClick={handleClick}>
+      <IconButton onClick={handleFetch}>
         <img src={down} alt="down-icon" className='down' />
       </IconButton>
+      {response && response.dlink && (
+        <IconButton onClick={handleDownload}>
+          <img src={down} alt="down-icon" className='down' />
+        </IconButton>
+      )}
     </Paper>
   );
 }
