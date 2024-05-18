@@ -8,18 +8,18 @@ import Playlist from './Playlist';
 import Creator2 from './CreatePlaylist';
 
 function App() {
-  const [playlist, setPlaylist] = useState([]);
-  
+  const [playlists, setPlaylists] = useState([]);
+  const [selectedPlaylist, setSelectedPlaylist] = useState(null);
+
   const handleSavePlaylist = (newFiles) => {
-      // Convert FileList to an array of File objects
-      const filesArray = Array.from(newFiles);
-      // Extract only the name property from each File object
-      const fileNamesArray = filesArray.map(file => ({ name: file.name }));
-      // Create a new playlist with the array of file objects
-      console.log("New playlist files:", fileNamesArray); // Add this line
-      setPlaylist(prevPlaylist => [...prevPlaylist, fileNamesArray]);
-    }
-      
+    const filesArray = Array.from(newFiles).map(file => ({ name: file.name }));
+    setPlaylists(prevPlaylists => [...prevPlaylists, filesArray]);
+  };
+
+  const handleFileClick = (playlist) => {
+    setSelectedPlaylist(playlist);
+  };
+
   return (
     <div>
       <div>
@@ -36,15 +36,15 @@ function App() {
           <MusicCard />
         </div>
         <div className='displayer'>
-          <Displayer />
+          <Displayer selectedPlaylist={selectedPlaylist} />
         </div>
       </div>
       <div>
         <h1 className='title'>Playlists</h1>
         <div className='playlist-view'>
           <Creator2 onSavePlaylist={handleSavePlaylist} />
-          {playlist.map((playlist, index) => (
-          <Playlist key={index} playlist={playlist} />
+          {playlists.map((playlist, index) => (
+            <Playlist key={index} playlist={playlist} onFileClick={() => handleFileClick(playlist)} />
           ))}
         </div>
       </div>
