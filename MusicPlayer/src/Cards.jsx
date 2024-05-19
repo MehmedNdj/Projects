@@ -8,22 +8,23 @@ import Box from '@mui/material/Box';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
+import { useSelectedItem } from './services/SelectedItemContext';
 
 function MusicCard() {
+  const { selectedItem } = useSelectedItem();
+
   return (
     <Card sx={{ display: 'flex', width: '600px', height: '300px' }}>
-      {/* Left section */}
       <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1 }}>
         <CardContent>
           <Typography component="div" variant="h5">
-            Live From Space
+            {selectedItem || 'Live From Space'}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             Mac Miller
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          {/* Middle section */}
           <IconButton aria-label="previous" size="large">
             <SkipPreviousIcon fontSize="large" />
           </IconButton>
@@ -35,7 +36,6 @@ function MusicCard() {
           </IconButton>
         </Box>
       </Box>
-      {/* Right section */}
       <CardMedia
         component="img"
         sx={{ width: 250, height: '100%', objectFit: 'cover'}}

@@ -4,13 +4,14 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FixedSizeList } from 'react-window';
+import { useSelectedItem } from './services/SelectedItemContext';
 
 function renderRow(props) {
-  const { index, style, data } = props;
+  const { index, style, data, onItemClick } = props;
 
   return (
     <ListItem style={style} key={index} component="div" disablePadding>
-      <ListItemButton>
+      <ListItemButton onClick={() => onItemClick(data[index].name)}>
         <ListItemText primary={data[index].name} />
       </ListItemButton>
     </ListItem>
@@ -18,6 +19,7 @@ function renderRow(props) {
 }
 
 function Displayer({ selectedPlaylist }) {
+  const { setSelectedItem } = useSelectedItem();
   const data = selectedPlaylist || [];
 
   return (
@@ -30,7 +32,7 @@ function Displayer({ selectedPlaylist }) {
         overscanCount={5}
         itemData={data}
       >
-        {renderRow}
+        {props => renderRow({ ...props, onItemClick: setSelectedItem })}
       </FixedSizeList>
     </Box>
   );
