@@ -20,8 +20,7 @@ body {
   margin-left: 37%;  
 }
 
-.cardwrapper,
-.displayer {
+.cardwrapper {
   display: grid;
   place-items: center;
   background-color: #0288d1;
@@ -47,12 +46,13 @@ body {
 
 .playlist-view {
   display: grid;
-  grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 15px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   height: 400px;
   margin-top: 40px;
+  margin-left: 5%;
 }

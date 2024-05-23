@@ -5,6 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FixedSizeList } from 'react-window';
 import { useSelectedItem } from './services/SelectedItemContext';
+import './Displayer.css';
 
 function renderRow(props) {
   const { index, style, data, onItemClick } = props;

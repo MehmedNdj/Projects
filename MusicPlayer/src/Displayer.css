@@ -1,0 +1,21 @@
+.displayer {
+    display: grid;
+    background-color: #0288d1;
+    border-radius: 20px;
+    padding-top: 30px;
+  }
+  
+  /* Style the rows */
+  .displayer .MuiListItem-root {
+    border-bottom: 1px solid #ccc; /* Grey lines */
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+  .displayer .MuiListItem-root:last-child {
+    border-bottom: none; /* Remove border for the last row */
+  }
+  
+  
+  
+  

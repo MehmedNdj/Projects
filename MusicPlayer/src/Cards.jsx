@@ -11,10 +11,20 @@ import PauseIcon from '@mui/icons-material/Pause';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import { useSelectedItem } from './services/SelectedItemContext';
 
-function MusicCard() {
-  const { selectedItem } = useSelectedItem();
+function MusicCard({ playlist = [] }) {
+  const { selectedItem, setSelectedItem } = useSelectedItem();
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const audioRef = useRef(new Audio());
+
+  useEffect(() => {
+    if (selectedItem && playlist.length > 0) {
+      const newIndex = playlist.findIndex(item => item.name === selectedItem);
+      if (newIndex !== -1) {
+        setCurrentIndex(newIndex);
+      }
+    }
+  }, [selectedItem, playlist]);
 
   const handlePlayPause = () => {
     if (isPlaying) {
@@ -25,21 +35,29 @@ function MusicCard() {
     setIsPlaying(!isPlaying);
   };
 
+  const handlePrevious = () => {
+    const newIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+    setCurrentIndex(newIndex);
+    setSelectedItem(playlist[newIndex].name);
+  };
+
+  const handleNext = () => {
+    const newIndex = (currentIndex + 1) % playlist.length;
+    setCurrentIndex(newIndex);
+    setSelectedItem(playlist[newIndex].name);
+  };
+
   useEffect(() => {
     if (selectedItem) {
-      // Remove the .mp3 extension from the selectedItem if it exists
       const fileName = selectedItem.endsWith('.mp3') ? selectedItem.slice(0, -4) : selectedItem;
-      const audioUrl = `/${fileName}.mp3`; // Update this line
-    
-      // Assign the URL to the src attribute of the audio element
+      const audioUrl = `/${fileName}.mp3`;
+
       audioRef.current.src = audioUrl;
-    
-      // Handle the error event
+
       audioRef.current.onerror = () => {
         console.error(`Failed to load audio file: ${audioUrl}`);
       };
-    
-      // Try to play the audio file
+
       audioRef.current.play().then(() => {
         setIsPlaying(true);
       }).catch(error => {
@@ -56,24 +74,24 @@ function MusicCard() {
             {selectedItem || 'Live From Space'}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
-            Mac Miller
+            
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          <IconButton aria-label="previous" size="large">
+          <IconButton aria-label="previous" size="large" onClick={handlePrevious} disabled={playlist.length === 0}>
             <SkipPreviousIcon fontSize="large" />
           </IconButton>
-          <IconButton aria-label="play/pause" size="large" onClick={handlePlayPause}>
+          <IconButton aria-label="play/pause" size="large" onClick={handlePlayPause} disabled={!selectedItem}>
             {isPlaying ? <PauseIcon fontSize="large" /> : <PlayArrowIcon fontSize="large" />}
           </IconButton>
-          <IconButton aria-label="next" size="large">
+          <IconButton aria-label="next" size="large" onClick={handleNext} disabled={playlist.length === 0}>
             <SkipNextIcon fontSize="large" />
           </IconButton>
         </Box>
       </Box>
       <CardMedia
         component="img"
-        sx={{ width: 250, height: '100%', objectFit: 'cover'}}
+        sx={{ width: 250, height: '100%', objectFit: 'cover' }}
         image="/src/assets/live-from-space.jpg"
         alt="Live from space album cover"
       />

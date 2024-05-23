@@ -1,12 +1,26 @@
 .playlistcard {
-    width: 200px;
-    height: 300px;
-    background-color: #0288d1;
-    border-radius: 10px;
-    color: white;
-  }
+  width: 200px;
+  height: 300px;
+  background-color: #0288d1;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  /* font-family: Helvetica, sans-serif; */
+}
 
-  .playlistcard .h2 {
-    margin-top: 10px;
-    background-color: black;
-  }
+.playlistcard h2 {
+  margin-top: 10px;
+}
+
+.playlistcard li {
+  margin-bottom: 20px;
+  max-width: 80%; /* Ensure max-width is set to 80% of the parent div */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playlistcard li:first-child {
+  margin-top: 30px;
+}
