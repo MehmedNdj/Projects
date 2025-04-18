@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UCare</title>
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <title>UCare Home</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-
-    <header>
-      <h1>UCare</h1>
-      <p>Your personal health records at your fingertips</p>
-    </header>
-
-  <main>
-    <div id="container">
-        <div id="first-section"></div>
-        <div id="second-section"></div>
+  <div class="container">
+    <div class="sidebar">
+      <p><strong>Name:</strong> John</p>
+      <p><strong>Surname:</strong> Doe</p>
+      <p><strong>Age:</strong> 29</p>
+      <p><strong>Weight:</strong> 72kg</p>
+      <p><strong>Height:</strong> 178cm</p>
+      <p><strong>BMI:</strong> 22.7</p>
     </div>
-  </main>
-  
-  <footer>
-    &copy; 2025 Medical Portal. All rights reserved.
-  </footer>
 
+    <div class="main-content">
+      <div class="logo">
+        <img src="../../public/Logo2.png" alt="UCare Logo" class="logo-image" id = "logo"/>
+      </div>
+
+      <div class="grid">
+        <button class="card">Prescriptions</button>
+        <button class="card">Illnesses</button>
+        <button class="card">Appointments</button>
+        <button class="card">Allergies</button>
+        <button class="card">Hospital Stays</button>
+        <button class="card">Lab Results</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
