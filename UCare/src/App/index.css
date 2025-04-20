@@ -14,8 +14,7 @@ body {
     padding: 30px 20px;
     width: 250px;
     color: #fffafa;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+
   }
   
   .sidebar p {
@@ -36,7 +35,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-bottom: 30px;
+
     font-weight: bold;
     border-radius: 5px;
   }
@@ -45,7 +44,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
-  }
+    width: 625px;
+    height: 420px;
+    margin: 0 auto;}
   
   .card {
     background-color: #3b82f6;
@@ -67,6 +68,5 @@ body {
   #logo {
     width: 200px;
     height: auto;
-    margin-bottom: 20px;
   }
   
