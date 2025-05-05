@@ -1,57 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UCare - Prescriptions</title>
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <title>Prescriptions</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2>UCare</h2>
-      <nav>
-        <ul>
-          <li class="active">Prescriptions</li>
-          <li><a href="illnesses.html">Illnesses</a></li>
-          <li><a href="vaccines.html">Vaccines</a></li>
-          <li><a href="allergies.html">Allergies</a></li>
-          <li><a href="hospital_stays.html">Hospital Stays</a></li>
-          <li><a href="lab_results.html">Lab Results</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <h2>Prescriptions</h2>
+  <button onclick="loadPrescriptions()">Load Prescriptions</button>
 
-    <main class="content">
-      <h1>Prescription Records</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Medicine</th>
-            <th>Dosage</th>
-            <th>Prescribed By</th>
-            <th>Date</th>
-            <th>Duration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Metformin</td>
-            <td>500mg</td>
-            <td>Dr. Petrova</td>
-            <td>2023-11-12</td>
-            <td>6 months</td>
-          </tr>
-          <tr>
-            <td>Ibuprofen</td>
-            <td>200mg</td>
-            <td>Dr. Ivanov</td>
-            <td>2024-01-20</td>
-            <td>5 days</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-  </div>
+  <table id="prescriptionTable">
+    <thead>
+      <tr>
+        <th>Medication</th>
+        <th>Dosage</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Prescribing Doctor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will go here -->
+    </tbody>
+  </table>
+
+  <script src="index.js"></script>
 </body>
 </html>
