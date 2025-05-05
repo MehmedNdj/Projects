@@ -9,7 +9,6 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Resolve absolute path to the database
 const dbPath = path.join(__dirname, '../database/UCare_sample.db');
 
 const fs = require('fs');
@@ -25,7 +24,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
-// Sample route to get prescriptions
 app.get('/api/prescriptions', (req, res) => {
   const query = 'SELECT * FROM prescriptions';
 
