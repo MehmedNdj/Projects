@@ -14,17 +14,17 @@ async function loadPrescriptions() {
     // Loop through the prescriptions and create table rows
     data.forEach(p => {
       const row = `<tr>
-        <td>${p.name}</td>
+        <td>${p.medication_name}</td>
         <td>${p.dosage}</td>
-        <td>${p.start}</td>
-        <td>${p.end}</td>
-        <td>${p.doctor}</td>
+        <td>${p.start_date}</td>
+        <td>${p.end_date}</td>
+        <td>${p.prescribing_doctor}</td>
       </tr>`;
       tbody.innerHTML += row;
     });
 
-    console.log(data); // Add this line to see the actual data structure
-
+    // Optional: log the fetched data to the console
+    //console.log(data);
 
     // Initialize Tablesort on the table after data is inserted
     new Tablesort(document.getElementById('prescriptionTable'));
