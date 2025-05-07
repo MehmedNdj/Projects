@@ -38,11 +38,6 @@ body {
   font-weight: 500;
 }
 
-.sidebar .active {
-  font-weight: bold;
-  color: #ffd6dc;
-}
-
 .content {
   flex: 1;
   padding: 40px;

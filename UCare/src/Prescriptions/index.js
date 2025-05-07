@@ -1,19 +1,36 @@
+// Function to load prescriptions from the server and populate the table
 async function loadPrescriptions() {
-    const response = await fetch('/api/prescriptions');
+  try {
+    // Fetch prescription data from the backend API
+    const response = await fetch('http://localhost:3000/api/prescriptions');
     const data = await response.json();
-  
+
+    // Get the table body element where data will be inserted
     const tbody = document.querySelector('#prescriptionTable tbody');
-    tbody.innerHTML = ''; // Clear any old data
-  
+    
+    // Clear any existing rows in the table
+    tbody.innerHTML = '';
+
+    // Loop through the prescriptions and create table rows
     data.forEach(p => {
       const row = `<tr>
-        <td>${p.medication_name}</td>
+        <td>${p.name}</td>
         <td>${p.dosage}</td>
-        <td>${p.start_date}</td>
-        <td>${p.end_date}</td>
-        <td>${p.prescribing_doctor}</td>
+        <td>${p.start}</td>
+        <td>${p.end}</td>
+        <td>${p.doctor}</td>
       </tr>`;
       tbody.innerHTML += row;
     });
+
+    console.log(data); // Add this line to see the actual data structure
+
+
+    // Initialize Tablesort on the table after data is inserted
+    new Tablesort(document.getElementById('prescriptionTable'));
+
+  } catch (error) {
+    // Log error if data loading fails
+    console.error('Error loading prescriptions:', error);
   }
-  
+}

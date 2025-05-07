@@ -6,24 +6,44 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <h2>Prescriptions</h2>
-  <button onclick="loadPrescriptions()">Load Prescriptions</button>
+  <div class="container">
 
-  <table id="prescriptionTable">
-    <thead>
-      <tr>
-        <th>Medication</th>
-        <th>Dosage</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Prescribing Doctor</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Rows will go here -->
-    </tbody>
-  </table>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>UCare</h2>
+      <ul>
+        <li><a href="../Illnesses/index.html">Illnesses</a></li>
+        <li><a href="../Vaccines/index.html">Vaccines</a></li>
+        <li><a href="../Allergies/index.html">Allergies</a></li>
+        <li><a href="../Hospital/index.html">Hospital Stays</a></li>
+        <li><a href="../Lab/index.html">Lab Results</a></li>
+      </ul>
+    </nav>
 
+    <!-- Main Content -->
+    <main class="content">
+      <h1>Prescriptions</h1>
+      
+      <table id="prescriptionTable">
+        <thead>
+          <tr>
+            <th>Medication</th>
+            <th>Dosage</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Prescribing Doctor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic rows will be inserted here -->
+        </tbody>
+      </table>
+      <button onclick="loadPrescriptions()">Load Prescriptions</button>
+    </main>
+
+  </div>
+
+  <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
