@@ -44,6 +44,34 @@ app.get('/api/allergies', (req, res) => {
   });
 });
 
+app.get('/api/vaccines', (req, res) => {
+  db.all('SELECT * FROM vaccines', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
+
+app.get('/api/labresults', (req, res) => {
+  db.all('SELECT * FROM lab_results', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
+
+app.get('/api/illnesses', (req, res) => {
+  db.all('SELECT * FROM illnesses', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
+
+app.get('/api/hospitalstays', (req, res) => {
+  db.all('SELECT * FROM hospital_stays', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

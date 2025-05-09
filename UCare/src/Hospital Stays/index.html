@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UCare – Hospital Stays</title>
+  <title>Hospital Stays</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
     </aside>
     <main class="content">
       <h1>Hospital Stays</h1>
-      <table>
+      <table id="hospitalstaysTable">
         <thead>
           <tr>
             <th>Hospital Name</th>
@@ -30,23 +30,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Burgas University Hospital</td>
-            <td>Cardiology</td>
-            <td>2023-09-15</td>
-            <td>2023-09-22</td>
-            <td>Chest Pain Observation</td>
-          </tr>
-          <tr>
-            <td>Sofia Central Hospital</td>
-            <td>Orthopedics</td>
-            <td>2022-03-10</td>
-            <td>2022-03-14</td>
-            <td>Leg Fracture</td>
-          </tr>
+          <!-- Dynamic rows will be inserted here -->  
         </tbody>
       </table>
+      <button onclick="loadHospitalstays()">Load</button>
     </main>
   </div>
+  <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

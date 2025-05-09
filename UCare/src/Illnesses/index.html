@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UCare - Illnesses</title>
+  <title>Illnesses</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
@@ -23,7 +22,7 @@
 
     <main class="content">
       <h1>Illness History</h1>
-      <table>
+      <table id="illnessesTable">
         <thead>
           <tr>
             <th>Illness</th>
@@ -33,21 +32,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Type 2 Diabetes</td>
-            <td>2021-06-12</td>
-            <td>Dr. Petrova / Endocrinology</td>
-            <td>Ongoing medication</td>
-          </tr>
-          <tr>
-            <td>Seasonal Flu</td>
-            <td>2024-01-14</td>
-            <td>Dr. Ivanov / General Medicine</td>
-            <td>Recovered</td>
-          </tr>
+          <!-- Dynamic rows will be inserted here -->
         </tbody>
       </table>
+        <button onclick="loadIllnesses()">Load</button>
     </main>
   </div>
+  <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
