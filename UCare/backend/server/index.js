@@ -37,6 +37,13 @@ app.get('/api/prescriptions', (req, res) => {
   });
 });
 
+app.get('/api/allergies', (req, res) => {
+  db.all('SELECT * FROM allergies', [], (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

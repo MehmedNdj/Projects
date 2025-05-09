@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UCare – Allergies</title>
+  <title>Allergies</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
     </aside>
     <main class="content">
       <h1>Allergy Records</h1>
-      <table>
+      <table id="allergiesTable">
         <thead>
           <tr>
             <th>Allergen</th>
@@ -30,23 +30,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Peanuts</td>
-            <td>Anaphylaxis</td>
-            <td>Severe</td>
-            <td>2020-04-22</td>
-            <td>Always carry EpiPen</td>
-          </tr>
-          <tr>
-            <td>Pollen</td>
-            <td>Sneezing, itchy eyes</td>
-            <td>Mild</td>
-            <td>2018-06-10</td>
-            <td>Seasonal, prescribed antihistamines</td>
-          </tr>
+          <!-- Dynamic rows will be inserted here -->
         </tbody>
       </table>
+      <button onclick="loadAllergies()">Load</button>
     </main>
   </div>
+
+  <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
