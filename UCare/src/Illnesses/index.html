@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8" />
-  <title>Illnesses</title>
+  <title>Заболявания</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
@@ -11,31 +11,31 @@
       <h2>UCare</h2>
       <nav>
         <ul>
-          <li><a href="prescriptions.html">Prescriptions</a></li>
-          <li><a href="vaccines.html">Vaccines</a></li>
-          <li><a href="allergies.html">Allergies</a></li>
-          <li><a href="hospital_stays.html">Hospital Stays</a></li>
-          <li><a href="lab_results.html">Lab Results</a></li>
+          <li><a href="prescriptions.html">Предписания</a></li>
+          <li><a href="vaccines.html">Ваксини</a></li>
+          <li><a href="allergies.html">Алергии</a></li>
+          <li><a href="hospital_stays.html">Болнични престои</a></li>
+          <li><a href="lab_results.html">Лабораторни резултати</a></li>
         </ul>
       </nav>
     </aside>
 
     <main class="content">
-      <h1>Illness History</h1>
+      <h1>История на заболяванията</h1>
       <table id="illnessesTable">
         <thead>
           <tr>
-            <th>Illness</th>
-            <th>Diagnosis Date</th>
-            <th>Doctor / Department</th>
-            <th>Treatment</th>
+            <th>Заболяване</th>
+            <th>Дата на диагноза</th>
+            <th>Лекар / Отделение</th>
+            <th>Лечение</th>
           </tr>
         </thead>
         <tbody>
           <!-- Dynamic rows will be inserted here -->
         </tbody>
       </table>
-        <button onclick="loadIllnesses()">Load</button>
+        <button onclick="loadIllnesses()">Зареди</button>
     </main>
   </div>
   <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>

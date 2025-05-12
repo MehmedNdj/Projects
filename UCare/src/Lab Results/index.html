@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <title>Lab Results</title>
+  <title>Лабораторни резултати</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -10,29 +10,29 @@
     <aside class="sidebar">
       <h2>UCare</h2>
       <nav>
-        <a href="prescriptions.html">Prescriptions</a>
-        <a href="illnesses.html">Illnesses</a>
-        <a href="vaccines.html">Vaccines</a>
-        <a href="allergies.html">Allergies</a>
-        <a href="hospital-stays.html">Hospital Stays</a>
+        <a href="prescriptions.html">Предписания</a>
+        <a href="illnesses.html">Заболявания</a>
+        <a href="vaccines.html">Ваксини</a>
+        <a href="allergies.html">Алергии</a>
+        <a href="hospital-stays.html">Болнични престои</a>
       </nav>
     </aside>
     <main class="content">
-      <h1>Lab Results</h1>
+      <h1>Лабораторни резултати</h1>
       <table id="labresultsTable">
         <thead>
           <tr>
-            <th>Test</th>
-            <th>Date</th>
-            <th>Result</th>
-            <th>Reference Range</th>
+            <th>Изследване</th>
+            <th>Дата</th>
+            <th>Резултат</th>
+            <th>Референтни стойности</th>
           </tr>
         </thead>
         <tbody>
           <!-- Dynamic rows will be inserted here -->
         </tbody>
       </table>
-      <button onclick="loadLabresults()">Load</button>
+      <button onclick="loadLabresults()">Зареди</button>
     </main>
   </div>
   <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>

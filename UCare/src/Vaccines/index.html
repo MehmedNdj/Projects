@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <title>Vaccines</title>
+  <title>Ваксини</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -10,30 +10,30 @@
     <aside class="sidebar">
       <h2>UCare</h2>
       <nav>
-        <a href="prescriptions.html">Prescriptions</a>
-        <a href="illnesses.html">Illnesses</a>
-        <a href="allergies.html">Allergies</a>
-        <a href="hospital-stays.html">Hospital Stays</a>
-        <a href="lab-results.html">Lab Results</a>
+        <a href="prescriptions.html">Предписания</a>
+        <a href="illnesses.html">Заболявания</a>
+        <a href="allergies.html">Алергии</a>
+        <a href="hospital-stays.html">Болнични престои</a>
+        <a href="lab-results.html">Лабораторни резултати</a>
       </nav>
     </aside>
     <main class="content">
-      <h1>Vaccination History</h1>
+      <h1>История на ваксинации</h1>
       <table id="vaccinesTable">
         <thead>
           <tr>
-            <th>Vaccine</th>
-            <th>Date</th>
-            <th>Dose</th>
-            <th>Doctor</th>
-            <th>Notes</th>
+            <th>Ваксина</th>
+            <th>Дата</th>
+            <th>Доза</th>
+            <th>Лекар</th>
+            <th>Бележки</th>
           </tr>
         </thead>
         <tbody>
           <!-- Dynamic rows will be inserted here -->
         </tbody>
       </table>
-      <button onclick="loadVaccines()">Load</button>
+      <button onclick="loadVaccines()">Зареди</button>
     </main>
   </div>
   <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
