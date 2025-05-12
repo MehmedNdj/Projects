@@ -1,70 +1,65 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f4f8;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  width: 240px;
-  background-color: #a63446;
-  color: white;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h2 {
-  margin-top: 0;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 15px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-
-.content {
-  flex: 1;
-  padding: 40px;
-}
-
-.content h1 {
-  margin-top: 0;
-  color: #a63446;
-  margin-bottom: 30px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-th, td {
-  text-align: left;
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
-}
-
-thead {
-  background-color: #a63446;
-  color: white;
-}
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #113f67;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .sidebar nav a {
+    display: block;
+    margin: 15px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .sidebar nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 40px;
+  }
+  
+  .content h1 {
+    margin-top: 0;
+    color: #82c0cc;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #113f67;
+    color: white;
+  }
+  
