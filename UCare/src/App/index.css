@@ -34,7 +34,6 @@ body {
     background-color: #008cab00;
     color: white;
     text-align: center;
-    padding: 20px;
 
     font-weight: bold;
     border-radius: 5px;
@@ -66,7 +65,7 @@ body {
   }
 
   #logo {
-    width: 200px;
+    width: 244px;
     height: auto;
   }
   
